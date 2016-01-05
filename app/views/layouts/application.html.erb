@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Apocrypha</title>
+  <title>
+    <% if content_for :title %>
+      <%= yield(:title) %>
+    <% else %>
+      Welcome to the GlobalDevelopmentGroup
+    <% end %>
+  </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <header>
+      <h1 class="text-center">Apocrypha</h1>
+      <%= render 'layouts/navbar' %>
+    </header>
+    <div class="site-notifications">
+      <% flash.each do |key, message| %>
+      <div class="alert alert-<%= key %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= message %>
+      </div>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
 </body>
 </html>

@@ -1,7 +1,5 @@
-<%= link_to "Add New Category", new_category_path, class:"new" %>
-
-<div class="list-group">
-  <% @categories.each do |category| %>
-    <%= link_to category.name, category, class:"list-group-item" %>
-  <% end %>
-</div>
+<% @categories.each do |category| %>
+  <div class="">
+    <%= link_to category.name, category %>
+  </div>
+<% end %>

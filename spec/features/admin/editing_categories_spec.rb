@@ -3,8 +3,9 @@ require "rails_helper"
 RSpec.feature "Users can edit categories" do
 
   before do
+    login_as(FactoryGirl.create(:user, :admin))
     book = FactoryGirl.create(:category, name:"Fantasy")
-    visit '/categories'
+    visit 'admin/categories'
     click_link "Fantasy"
     click_link "Edit Category"
   end

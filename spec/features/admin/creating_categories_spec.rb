@@ -4,7 +4,7 @@ RSpec.feature "Users can create new categories for books" do
 
   before do
     login_as(FactoryGirl.create(:user, :admin))
-    visit '/categories'
+    visit '/admin/categories'
     click_link "Add New Category"
   end
 

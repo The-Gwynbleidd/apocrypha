@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Categories #
-  resources :categories
+  resources :categories, only:[:index, :show, :edit, :update]
 
   # Admin #
   namespace :admin do
     root "application#index"
+    resources :categories
   end
 
   # Website root page #

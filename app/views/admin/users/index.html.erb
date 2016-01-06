@@ -25,10 +25,10 @@
               "data-toggle" => "tooltip", "data-placement"=>"bottom", "title" => "Edit User" do %>
                 <i class="fa fa-pencil"></i>
               <% end %>
-              <%= link_to admin_user_path(user),
-                method: :delete,
-                data: { confirm: "Are you sure you want to delete this user?" },
-                class: "btn btn-danger", "data-toggle" => "tooltip", "data-placement"=>"bottom", "title" => "Delete User" do %>
+              <%= link_to [:archive, :admin, user],
+                method: :patch,
+                data: { confirm: "Are you sure you want to archive this user?" },
+                class: "btn btn-danger", "data-toggle" => "tooltip", "data-placement"=>"bottom", "title" => "Archive User" do %>
                 <i class="fa fa-trash"></i>
               <% end %>
             </td>

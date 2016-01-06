@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-
+  
+  namespace :admin do
+  get 'users/index'
+  end
 
   # Static Pages #
   get 'index' =>'static_pages#index'
@@ -15,6 +18,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "application#index"
     resources :categories
+    resources :users
   end
 
   # Website root page #

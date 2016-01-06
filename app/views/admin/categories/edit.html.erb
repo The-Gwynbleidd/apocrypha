@@ -1,3 +1,9 @@
 <% title("Edit Category", @category.name) %>
-<h1>Edit Category</h1>
-<%= render 'form', category:@category %>
+<h1>Admin Control Panel</h1>
+<div class="row">
+  <%= render 'admin/shared/sidebar' %>
+  <div class="col-md-9">
+    <h2>Edit Category</h2>
+    <%= render 'form', category:@category %>
+  </div>
+</div>

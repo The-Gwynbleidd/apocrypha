@@ -1,2 +1,9 @@
-<h1>Add New Category</h1>
-<%= render 'form', category:@category %> 
+<% title("Add New Category") %>
+<h1>Admin Control Panel</h1>
+<div class="row">
+  <%= render 'admin/shared/sidebar' %>
+  <div class="col-md-9">
+    <h2>Add New Category</h2>
+    <%= render 'form', category:@category %>
+  </div>
+</div>

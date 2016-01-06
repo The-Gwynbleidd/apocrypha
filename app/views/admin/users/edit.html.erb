@@ -1,1 +1,7 @@
-<%= render "form", user: @user %>
+<h1>Admin Control Panel</h1>
+<div class="row">
+  <%= render 'admin/shared/sidebar' %>
+  <div class="col-md-9">
+    <%= render "form", user: @user %>
+  </div>
+</div>

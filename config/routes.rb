@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+
   # Static Pages #
   get 'index' =>'static_pages#index'
   get 'about' => 'static_pages#about'
 
+  # Users #
+  devise_for :users
+
   # Categories #
   resources :categories
 
-  # Root page #
+  # Admin #
+  namespace :admin do
+    root "application#index"
+  end
+
+  # Website root page #
   root "static_pages#index"
 
 end

@@ -1,7 +1,5 @@
 <%= @user.email %>
 <%= link_to "Edit User", [:edit, :admin, @user], class:"edit" %>
-<%= link_to "Delete User",
-  [:edit, :admin, @user],
-  method: :delete,
-  data: { confirm: "Are you sure you want to delete this user?" },
-  class: "delete" %>
+<%= link_to "Archive User", [:archive, :admin, @user], method: :patch,
+data: { confirm: "Are you sure you want to archive this user?"},
+class: "delete" %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   namespace :admin do
   get 'users/index'
   end
@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   namespace :admin do
     root "application#index"
     resources :categories
-    resources :users
+    resources :users do
+      member do
+        patch :archive
+      end
+    end
   end
 
   # Website root page #
